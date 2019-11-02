@@ -50,26 +50,52 @@ static const unsigned CSPAD2x2_nASICS_Y = 2;   // 2 ASICs down in raw data stres
 //	PNCCD	//
 static const unsigned PNCCD_ASIC_NX = 512;	// ASIC nx = extent of one ASIC in x
 static const unsigned PNCCD_ASIC_NY = 512;	// ASIC ny = extent of one ASIC in y
-static const unsigned PNCCD_nASICS_X = 2;		// 2 ASICs across in raw data stream
-static const unsigned PNCCD_nASICS_Y = 2;		// 2 ASICs down in raw data stresm
+static const unsigned PNCCD_nASICS_X = 2;	// 2 ASICs across in raw data stream
+static const unsigned PNCCD_nASICS_Y = 2;	// 2 ASICs down in raw data stresm
 
 //	SACLA mpCCD	//
-static const unsigned mpCCD_ASIC_NX = 512;     // ASIC nx = extent of one ASIC in x
+static const unsigned mpCCD_ASIC_NX = 512;	// ASIC nx = extent of one ASIC in x
 static const unsigned mpCCD_ASIC_NY = 1024;	// ASIC ny = extent of one ASIC in y
-static const unsigned mpCCD_nASICS_X = 1;		// 2 ASICs across in raw data stream
-static const unsigned mpCCD_nASICS_Y = 8;		// 2 ASICs down in raw data stresm
+static const unsigned mpCCD_nASICS_X = 1;	// 2 ASICs across in raw data stream
+static const unsigned mpCCD_nASICS_Y = 8;	// 2 ASICs down in raw data stresm
 
 // Rayonix MX170HS //
-static const unsigned MX170HS_ASIC_NX = 3840;		// ASIC nx = extent of one ASIC in x
-static const unsigned MX170HS_ASIC_NY = 3840;		// ASIC ny = extent of one ASIC in y
+static const unsigned MX170HS_ASIC_NX = 3840;	// ASIC nx = extent of one ASIC in x
+static const unsigned MX170HS_ASIC_NY = 3840;	// ASIC ny = extent of one ASIC in y
 static const unsigned MX170HS_nASICS_X = 1;		// 2 ASICs across in raw data stream
 static const unsigned MX170HS_nASICS_Y = 1;		// 2 ASICs down in raw data stresm
 
 // Pilatus 6M //
-static const unsigned  PILATUS6M_ASIC_NX = 2463;		// ASIC nx = extent of one ASIC in x
-static const unsigned  PILATUS6M_ASIC_NY = 2527;		// ASIC ny = extent of one ASIC in y
+static const unsigned  PILATUS6M_ASIC_NX = 2463;	// ASIC nx = extent of one ASIC in x
+static const unsigned  PILATUS6M_ASIC_NY = 2527;	// ASIC ny = extent of one ASIC in y
 static const unsigned  PILATUS6M_nASICS_X = 1;		// Probably really 5x12 ASIC, but then
 static const unsigned  PILATUS6M_nASICS_Y = 1;		// ASIC dimensions aren't whole numbers
+
+// Rayonix MX225HS-2x //
+static const unsigned  MX225HS2X_ASIC_NX = 2880;	// ASIC nx = extent of one ASIC in x
+static const unsigned  MX225HS2X_ASIC_NY = 2880;	// ASIC ny = extent of one ASIC in y
+static const unsigned  MX225HS2X_nASICS_X = 1;
+static const unsigned  MX225HS2X_nASICS_Y = 1;
+
+// Rayonix MX225HS-3x //
+static const unsigned  MX225HS3X_ASIC_NX = 1920;	// ASIC nx = extent of one ASIC in x
+static const unsigned  MX225HS3X_ASIC_NY = 1920;	// ASIC ny = extent of one ASIC in y
+static const unsigned  MX225HS3X_nASICS_X = 1;
+static const unsigned  MX225HS3X_nASICS_Y = 1;
+
+// Rayonix MX225HS-4x //
+static const unsigned  MX225HS4X_ASIC_NX = 1440;	// ASIC nx = extent of one ASIC in x
+static const unsigned  MX225HS4X_ASIC_NY = 1440;	// ASIC ny = extent of one ASIC in y
+static const unsigned  MX225HS4X_nASICS_X = 1;
+static const unsigned  MX225HS4X_nASICS_Y = 1;
+
+// Jungfrau 0.5M modules//
+// ss size :  256 x 2 =  512 x 1 = 512
+// fs size :  256 x 4 = 1024 x 1 = 1024
+static const unsigned  JF_ASIC_NX = 256;		// ASIC nx = extent of one ASIC in x
+static const unsigned  JF_ASIC_NY = 256;		// ASIC ny = extent of one ASIC in y
+static const unsigned  JF_nASICS_X = 4;	    	// 4 ASICs across in raw data stream
+static const unsigned  JF_nASICS_Y = 2;	        // 2 ASICs down in raw data stresm
 
 static const unsigned int cbufsize = 1024;
 

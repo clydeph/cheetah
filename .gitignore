@@ -20,6 +20,9 @@ upload
 source/*.xcodeproj
 build
 
+# Editor
+.vscode
+
 # OS X Finder
 .DS_Store
 

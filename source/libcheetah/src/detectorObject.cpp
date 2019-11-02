@@ -331,17 +331,89 @@ void cPixelDetectorCommon::configure(cGlobal * global) {
 		pixelSize = 172e-6;
 		
 	}
-    else if(strcmp(detectorType, "jungfrau1M") == 0) {
-        strcpy(detectorType, "jungfrau1M");
-        asic_nx = 256;
-        asic_ny = 256;
-        nasics_x = 4;
-        nasics_y = 4;
+	else if(strcmp(detectorName, "mx225hs-2x") == 0 ) {
+		strcpy(detectorType, "mx225hs-2x");
+		asic_nx = MX225HS2X_ASIC_NX;
+		asic_ny = MX225HS2X_ASIC_NY;
+		nasics_x = MX225HS2X_nASICS_X;
+		nasics_y = MX225HS2X_nASICS_Y;
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;
+		pix_ny = asic_ny * nasics_y;
+		pix_nn = pix_nx * pix_ny;
+		pixelSize = 78e-6;
+	}
+	else if(strcmp(detectorName, "mx225hs-3x") == 0 ) {
+		strcpy(detectorType, "mx225hs-3x");
+		asic_nx = MX225HS3X_ASIC_NX;
+		asic_ny = MX225HS3X_ASIC_NY;
+		nasics_x = MX225HS3X_nASICS_X;
+		nasics_y = MX225HS3X_nASICS_Y;
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;
+		pix_ny = asic_ny * nasics_y;
+		pix_nn = pix_nx * pix_ny;
+		pixelSize = 117e-6;
+	}
+	else if(strcmp(detectorName, "mx225hs-4x") == 0 ) {
+		strcpy(detectorType, "mx225hs-4x");
+		asic_nx = MX225HS4X_ASIC_NX;
+		asic_ny = MX225HS4X_ASIC_NY;
+		nasics_x = MX225HS4X_nASICS_X;
+		nasics_y = MX225HS4X_nASICS_Y;
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;
+		pix_ny = asic_ny * nasics_y;
+		pix_nn = pix_nx * pix_ny;
+		pixelSize = 156e-6;
+	}
+    else if(strcmp(detectorType, "jf1M") == 0) {
+        strcpy(detectorType, "jf1M");
+        asic_nx = JF_ASIC_NX;
+        asic_ny = JF_ASIC_NY;
+        nasics_x = JF_nASICS_X;
+        nasics_y = JF_nASICS_Y * 2;
         asic_nn = asic_nx*asic_ny;
         pix_nx = asic_nx * nasics_x;
         pix_ny = asic_ny * nasics_y;
         pix_nn = pix_nx * pix_ny;
-        pixelSize = 100e-6;
+        pixelSize = 75e-6;
+    }
+	else if(strcmp(detectorName, "jf4M") == 0) {
+		strcpy(detectorType, "jf4M");
+		asic_nx = JF_ASIC_NX;
+		asic_ny = JF_ASIC_NY;
+		nasics_x = JF_nASICS_X;
+		nasics_y = JF_nASICS_Y * 8;
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;
+		pix_ny = asic_ny * nasics_y;
+		pix_nn = pix_nx * pix_ny;
+		pixelSize = 75e-6;
+    }
+	else if(strcmp(detectorName, "jf16M") == 0) {
+		strcpy(detectorType, "jf16M");
+		asic_nx = JF_ASIC_NX;
+		asic_ny = JF_ASIC_NY;
+		nasics_x = JF_nASICS_X;
+		nasics_y = JF_nASICS_Y * 32;
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;
+		pix_ny = asic_ny * nasics_y;
+		pix_nn = pix_nx * pix_ny;
+		pixelSize = 75e-6;
+    }
+    else if(strcmp(detectorType, "jungfrau1M") == 0) {
+        strcpy(detectorType, "jungfrau1M");
+        asic_nx = JF_ASIC_NX;
+        asic_ny = JF_ASIC_NY;
+        nasics_x = JF_nASICS_X;
+        nasics_y = JF_nASICS_Y * 2;
+        asic_nn = asic_nx*asic_ny;
+        pix_nx = asic_nx * nasics_x;
+        pix_ny = asic_ny * nasics_y;
+        pix_nn = pix_nx * pix_ny;
+        pixelSize = 75e-6;
     }
     else if(strcmp(detectorType, "epix100a") == 0) {
         strcpy(detectorType, "epix100a");
