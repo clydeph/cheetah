@@ -1,5 +1,6 @@
 
-find_package(HDF5 REQUIRED)
+set(HDF5_USE_STATIC_LIBRARIES 1)
+find_package(HDF5 REQUIRED COMPONENTS C)
 #find_package(PythonLibs REQUIRED)
 #find_package(MPI REQUIRED)
 
