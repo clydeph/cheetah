@@ -1,6 +1,9 @@
 # cheetah
 Cheetah for PAL-XFEL
 
+forked from antonbarty/cheetah
+cheetah-pal is based on chuckie82/cheetah_pal
+
 Supported Detectors:
 * Rayonix MX225HS-2X ( 2x2 binning, 2880 x 2880 pixels, 78 um pixel size)
 * Rayonix MX225HS-3X ( 3x3 binning, 1920 x 1920 pixels, 117 um pixel size)
