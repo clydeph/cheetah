@@ -331,7 +331,8 @@ void cPixelDetectorCommon::configure(cGlobal * global) {
 		pixelSize = 172e-6;
 		
 	}
-	else if(strcmp(detectorName, "mx225hs-2x") == 0 ) {
+	else if(strcasecmp(detectorName, "mx225hs-2x") == 0 ) {
+		// Rayonix MX225HS 2x2 binning
 		strcpy(detectorType, "mx225hs-2x");
 		asic_nx = MX225HS2X_ASIC_NX;
 		asic_ny = MX225HS2X_ASIC_NY;
@@ -343,7 +344,8 @@ void cPixelDetectorCommon::configure(cGlobal * global) {
 		pix_nn = pix_nx * pix_ny;
 		pixelSize = 78e-6;
 	}
-	else if(strcmp(detectorName, "mx225hs-3x") == 0 ) {
+	else if(strcasecmp(detectorName, "mx225hs-3x") == 0 ) {
+		// Rayonix MX225HS 3x3 binning
 		strcpy(detectorType, "mx225hs-3x");
 		asic_nx = MX225HS3X_ASIC_NX;
 		asic_ny = MX225HS3X_ASIC_NY;
@@ -355,7 +357,8 @@ void cPixelDetectorCommon::configure(cGlobal * global) {
 		pix_nn = pix_nx * pix_ny;
 		pixelSize = 117e-6;
 	}
-	else if(strcmp(detectorName, "mx225hs-4x") == 0 ) {
+	else if(strcasecmp(detectorName, "mx225hs-4x") == 0 ) {
+		// Rayonix MX225HS 4x4 binning
 		strcpy(detectorType, "mx225hs-4x");
 		asic_nx = MX225HS4X_ASIC_NX;
 		asic_ny = MX225HS4X_ASIC_NY;
@@ -367,53 +370,44 @@ void cPixelDetectorCommon::configure(cGlobal * global) {
 		pix_nn = pix_nx * pix_ny;
 		pixelSize = 156e-6;
 	}
-    else if(strcmp(detectorType, "jf1M") == 0) {
-        strcpy(detectorType, "jf1M");
-        asic_nx = JF_ASIC_NX;
-        asic_ny = JF_ASIC_NY;
-        nasics_x = JF_nASICS_X;
-        nasics_y = JF_nASICS_Y * 2;
-        asic_nn = asic_nx*asic_ny;
-        pix_nx = asic_nx * nasics_x;
-        pix_ny = asic_ny * nasics_y;
-        pix_nn = pix_nx * pix_ny;
-        pixelSize = 75e-6;
-    }
-	else if(strcmp(detectorName, "jf4M") == 0) {
+	else if(strcasecmp(detectorName, "jf1M") == 0) {
+		// Jungfrau 1M
+		strcpy(detectorType, "jf1M");
+		asic_nx = JF_ASIC_NX;
+		asic_ny = JF_ASIC_NY;
+		nasics_x = JF_nASICS_X;			// 4
+		nasics_y = JF_nASICS_Y * 2;		// 4
+		asic_nn = asic_nx*asic_ny;
+		pix_nx = asic_nx * nasics_x;	// 1024
+		pix_ny = asic_ny * nasics_y;	// 1024
+		pix_nn = pix_nx * pix_ny;		// 1 M
+		pixelSize = 75e-6;
+	}
+	else if(strcasecmp(detectorName, "jf4M") == 0) {
+		// Jungfrau 4M
 		strcpy(detectorType, "jf4M");
 		asic_nx = JF_ASIC_NX;
 		asic_ny = JF_ASIC_NY;
-		nasics_x = JF_nASICS_X;
-		nasics_y = JF_nASICS_Y * 8;
+		nasics_x = JF_nASICS_X;			// 4
+		nasics_y = JF_nASICS_Y * 8;		// 16
 		asic_nn = asic_nx*asic_ny;
-		pix_nx = asic_nx * nasics_x;
-		pix_ny = asic_ny * nasics_y;
-		pix_nn = pix_nx * pix_ny;
+		pix_nx = asic_nx * nasics_x;	// 1024
+		pix_ny = asic_ny * nasics_y;	// 4096
+		pix_nn = pix_nx * pix_ny;		// 4 M
 		pixelSize = 75e-6;
-    }
-	else if(strcmp(detectorName, "jf16M") == 0) {
+	}
+	else if(strcasecmp(detectorName, "jf16M") == 0) {
+		// Jungfrau 16M
 		strcpy(detectorType, "jf16M");
 		asic_nx = JF_ASIC_NX;
 		asic_ny = JF_ASIC_NY;
-		nasics_x = JF_nASICS_X;
-		nasics_y = JF_nASICS_Y * 32;
+		nasics_x = JF_nASICS_X;			// 4
+		nasics_y = JF_nASICS_Y * 32;	// 64
 		asic_nn = asic_nx*asic_ny;
-		pix_nx = asic_nx * nasics_x;
-		pix_ny = asic_ny * nasics_y;
-		pix_nn = pix_nx * pix_ny;
+		pix_nx = asic_nx * nasics_x;	// 1024
+		pix_ny = asic_ny * nasics_y;	// 16384
+		pix_nn = pix_nx * pix_ny;		// 16 M
 		pixelSize = 75e-6;
-    }
-    else if(strcmp(detectorType, "jungfrau1M") == 0) {
-        strcpy(detectorType, "jungfrau1M");
-        asic_nx = JF_ASIC_NX;
-        asic_ny = JF_ASIC_NY;
-        nasics_x = JF_nASICS_X;
-        nasics_y = JF_nASICS_Y * 2;
-        asic_nn = asic_nx*asic_ny;
-        pix_nx = asic_nx * nasics_x;
-        pix_ny = asic_ny * nasics_y;
-        pix_nn = pix_nx * pix_ny;
-        pixelSize = 75e-6;
     }
     else if(strcmp(detectorType, "epix100a") == 0) {
         strcpy(detectorType, "epix100a");
