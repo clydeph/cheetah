@@ -116,11 +116,11 @@ def set_location_configuration(location="Default"):
         result.update(config)
 
     elif  location=='PAL':
-        PAL = {
+        config = {
             'qcommand' : 'slurm' # FIXME : slurm will be used at PAL
             #'qcommand' : 'condor_q' # FIXME : HTCondor at KISTI
         }
-        result.update(PAL)
+        result.update(config)
 
     else:
         default = {
