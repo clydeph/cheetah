@@ -16,27 +16,27 @@
  *  Structure for holding SACLA HDF5 metadata
  */
 typedef struct {
-    
-    char filename[1024]; // Filename
-    char version[1024]; // PAL hdf5 schema version
+	
+	char filename[1024]; // Filename
+	char version[1024]; // PAL hdf5 schema version
 
-    char experimentID[1024]; // Run information
+	char experimentID[1024]; // Run information
 
-    hid_t   file_id;
-    int32_t run_number;
-    
-    unsigned    nevents; // Detector event tags within a run
-    unsigned    ndetectors;
+	hid_t   file_id;
+	int32_t run_number;
 
-    int *pumpLaserOn;
-    int *pumpLaserCode;
-    float *pumpLaserDelay;
-    float *photon_energy_keV;
+	uint32_t    ndetectors;	
+	uint64_t    nevents; // Detector event tags within a run
 
-    // Device objects within a run
-    char    **detector_name;
-    float *detectorZ;
-    int *data_raw_is_float;
+	int		*pumpLaserOn;
+	int		*pumpLaserCode;
+	float	*pumpLaserDelay;
+	float	*photon_energy_keV;
+
+	// Device objects within a run
+	char	**detector_name;
+	float	*detectorZ;
+	int		*data_raw_is_float;
 
 
 } h5_info_t;
