@@ -51,6 +51,18 @@ def determine_location():
         print("Looks like we are on the euXFEL network.")
         location = 'euXFEL'
 
+    elif hostname.endswith("xfel.pal"):
+        print("Looks like we are at PAL.")
+        location = 'PAL'
+
+    elif hostname.startswith("ur1p") and hostname.endswith("4thbl"):
+        print("Looks like we are at PAL.")
+        location = 'PAL'
+
+    elif hostname.endswith("sdfarm.kr"):
+        print("Looks like we are at KISTI.")
+        location = 'PAL' # KISTI behaves like PAL
+
     else:
         print("Unable to determine location from hostname")
         location = 'None'
@@ -74,7 +86,6 @@ def set_location_configuration(location="Default"):
     result = {}
 
     if  location=='LCLS':
-
         config = {
             'qcommand' : 'bsub -q psanaq'
         }
@@ -98,12 +109,18 @@ def set_location_configuration(location="Default"):
         }
         result.update(config)
 
-
     elif  location=='euXFEL':
         config = {
             'qcommand' : 'slurm'
         }
         result.update(config)
+
+    elif  location=='PAL':
+        PAL = {
+            'qcommand' : 'slurm' # FIXME : slurm will be used at PAL
+            #'qcommand' : 'condor_q' # FIXME : HTCondor at KISTI
+        }
+        result.update(PAL)
 
     else:
         default = {

@@ -53,6 +53,9 @@ def scan_hdf5(hdf5_dir):
         # Extract the run number (Warning: LCLS-specific)
         if directory.startswith('r'):
             run = directory[:5]
+        # Extract the run number (Warning: PAL-specific) # FIXME: would be good if compatible with LCLS
+        elif directory.startswith('0'):
+            run = int(directory[:7])
         else:
             part = directory.partition('-')
             run = part[0]

@@ -1,7 +1,7 @@
 # cheetah
 Cheetah for PAL-XFEL
 
-forked from [antonbarty/cheetah](https://github.com/antonbarty/cheetah)__
+forked from [antonbarty/cheetah](https://github.com/antonbarty/cheetah)<br/>
 cheetah-pal is based on [chuckie82/cheetah_pal](https://github.com/chuckie82/cheetah_pal)
 
 Supported Detectors:

@@ -360,6 +360,8 @@ class cheetah_gui(PyQt5.QtWidgets.QMainWindow):
                 dir = 'r{:04d}'.format(int(run))
             elif 'max-cfel' in self.compute_location['location']:
                 dir = 'r{:04d}'.format(int(run))
+            elif 'PAL' in self.location['location']: # TODO: this may change
+                dir = '{:07d}'.format(int(run))
             else:
                 dir = run
             dir += '-'+dataset
@@ -482,6 +484,8 @@ class cheetah_gui(PyQt5.QtWidgets.QMainWindow):
                     newdir = 'r{:04d}'.format(int(run))
                 elif 'max-exfl' in self.compute_location['location']:
                     newdir = 'r{:04d}'.format(int(run))
+                elif 'PAL' in self.location['location']: # TODO: this may change
+                    newdir = '{:07d}'.format(int(run))
                 else:
                     newdir = run
                 newdir += '-' + newlabel
@@ -874,10 +878,16 @@ class cheetah_gui(PyQt5.QtWidgets.QMainWindow):
 
 
         # Trap some legacy case with fewer keys in file
-        if not 'cheetahini' in config.keys():
-            config.update({'cheetahini': 'darkcal.ini'})
-        if not 'cheetahtag' in config.keys():
-            config.update({'cheetahtag': 'darkcal'})
+        if 'PAL' in self.location['location']:
+            if not 'cheetahini' in config.keys():
+                config.update({'cheetahini': 'pal.ini'})
+            if not 'cheetahtag' in config.keys():
+                config.update({'cheetahtag': 'pal'})
+        else:
+            if not 'cheetahini' in config.keys():
+                config.update({'cheetahini': 'darkcal.ini'})
+            if not 'cheetahtag' in config.keys():
+                config.update({'cheetahtag': 'darkcal'})
         if not 'cheetahcalib' in config.keys():
             config.update({'cheetahcalib': 'None'})
 

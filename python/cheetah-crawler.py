@@ -14,6 +14,7 @@ import PyQt5.QtWidgets
 import UI.crawler_ui
 import lib.crawler_slac as crawler_slac
 import lib.crawler_exfel as crawler_exfel
+import lib.crawler_pal as crawler_pal
 import lib.crawler_p11 as crawler_p11
 import lib.crawler_hdf5 as crawler_hdf5
 import lib.crawler_crystfel as crawler_crystfel
@@ -39,6 +40,8 @@ class cheetah_crawler(PyQt5.QtWidgets.QMainWindow):
             self.datatype = 'exfel'
         if '/gpfs/cfel/' in self.data_dir:
             self.datatype = 'exfel'
+        if '/xfel' in self.data_dir:
+            self.datatype = 'PAL'
         if 'p11' in self.data_dir and 'asap3' in self.data_dir:
             self.datatype = 'P11'
 
@@ -61,6 +64,8 @@ class cheetah_crawler(PyQt5.QtWidgets.QMainWindow):
             crawler_slac.scan_data(self.data_dir)
         elif self.datatype is 'exfel':
             crawler_exfel.scan_data(self.data_dir)
+        elif self.datatype is 'PAL':
+            crawler_pal.scan_data(self.data_dir)
         elif self.datatype is 'P11':
             crawler_p11.scan_data(self.data_dir)
         elif self.datatype is 'directories':
