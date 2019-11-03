@@ -1509,6 +1509,11 @@ void cPixelDetectorCommon::readDarkcal(char *filename)
         useDarkcalSubtraction=0;
         return;
     }
+    // Dark calibration for the JUNGFRAU detector is handled by the file reading stage; pass through value
+    if(strncmp(detectorType, "jf", 2) == 0) {
+        useDarkcalSubtraction=0;
+        return;
+    }
 
     // Check if a darkcal file has been specified
     if (strcmp(filename, "") == 0) {
@@ -1566,7 +1571,11 @@ void cPixelDetectorCommon::readGaincal(char *filename)
         useGaincal=0;
         return;
     }
-
+    // Gain calibration for the JUNGFRAU detector is handled by the file reading stage; pass through value
+    if(strncmp(detectorType, "jf", 2) == 0) {
+        useGaincal=0;
+        return;
+    }
     
     // Check if a gain calibration file has been specified
     if (strcmp(filename, "") == 0) {
